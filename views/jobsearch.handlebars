@@ -1,0 +1,10 @@
+<div class="container">
+<h3>{{results.length}} results </h3>
+<br/>
+<table class="table table-striped">
+    <tr><td>company</td><td>title</td><td>description</td><td>website</td></tr>
+{{#each results}}
+<tr><td>{{this.company}}</td><td>{{this.title}}</td><td>{{this.description}}</td><td><a href={{this.company_url}} target="_blank">{{this.company_url}}</td></tr>
+{{/each}}
+</table>
+</div>

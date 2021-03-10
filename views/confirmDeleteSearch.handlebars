@@ -1,0 +1,10 @@
+Are you sure you want to delete your search "{{data.searchName}}" ?
+
+<form action="/deleteSearch" method="POST">
+<input type="hidden" name="id" value={{data._id}}>
+<button class="btn btn-danger">Delete</button>
+</form>
+
+<a href="/searches"><button class="btn btn-secondary">Keep</button></a>
+
+

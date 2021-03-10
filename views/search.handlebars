@@ -1,0 +1,21 @@
+<form method="post" action="/search">
+  <div class="form-group mb-2">
+    <label>Enter a name for this search</label>
+    <input class="form-control" name="searchName">
+  </div>
+
+  <div class="form-group mb-2">
+    <label>Enter locations to search</label>
+    <input class="form-control" name="location">
+  </div>
+
+<label>Select programming languages</label>
+  {{#each data}}
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="programmingLanguages" value={{this.id}}>
+    <label class="form-check-label" for="inlineCheckbox1">{{this.name}}</label>
+  </div>
+  {{/each}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

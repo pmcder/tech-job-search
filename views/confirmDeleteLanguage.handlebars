@@ -1,0 +1,8 @@
+Are you sure you want to delete {{data.name}} ?
+
+<form action="/deleteLanguage" method="POST">
+<input type="hidden" name="id" value={{data.id}}>
+<button class="btn btn-danger">Delete</button>
+</form>
+
+<a href="/admin"><button class="btn btn-secondary">Keep</button></a>

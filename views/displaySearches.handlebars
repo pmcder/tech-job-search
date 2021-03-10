@@ -1,0 +1,32 @@
+  <div class="container">
+  <h3>Your Searches</h3>
+  <a class="btn btn-primary" href="/search" role="button">Create New Search</a>
+  <div>
+  <table class="table table-striped">
+  <thead class="thead-dark">
+  <tr><td>Search Name</td><td>Date Last run</td><td>Number of Results<br>at Last Run</td><td>Location</td><td>Selected Languages</td></tr>
+  </thead>
+  {{#each data}}
+  <tr>
+    <td>{{this.name}}</td><td>{{this.lastRun}}</td><td>{{this.resultsAtLastRun}}</td><td>{{this.location}}</td>
+    <td>{{#each programmingLanguages}} {{this.languageName}} {{/each}}<br/></td>
+  <td>
+    <form action="/executeSearch" method="GET">
+      <input type="hidden" name="id" value={{this.id}}>
+    <input type="submit" value="run search" class="btn btn-success">
+    </form>
+  <td>
+    <td>
+      <form action="/confirmDeleteSearch" method="POST">
+      <input type="hidden" name="id" value={{this.id}}>
+    <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+    </td>
+  </tr>
+  {{/each}}
+  </table>
+  </div>
+</div>
+  
+  
+ 

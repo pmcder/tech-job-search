@@ -1,0 +1,41 @@
+<div class="container">
+<form method="POST" action="/addLanguage">
+  <div class="form-group mb-2">
+    <label>Language name</label>
+    <input  class="form-control" name="lname">
+  </div>
+  <div class="form-group">
+    <label >Year created</label>
+    <input  class="form-control" name="yearCreated">
+  </div>
+   <div class="form-group">
+    <label >Name of designer</label>
+    <input  class="form-control" name="designedBy">
+  </div>
+   <div class="form-group">
+    <label>Website URL</label>
+    <input  class="form-control" name="website">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div>
+
+<table class="table table-dark table-striped">
+  <thead>
+  <tr><td>Name</td><td>Year created</td><td>Created by</td><td>Website</td></tr>
+  </thead>
+  {{#each data}}
+  <tr><td>{{this.name}}</td><td>{{this.yearCreated}}</td><td>{{this.designedBy}}</td><td>{{this.website}}</td>
+  <td>
+    <form action="/confirmDeleteLanguage" method="POST">
+      <input type="hidden" value={{this.id}} name="id">
+      <input type="submit" class="btn btn-danger" value="Delete">
+    </form>
+  </td>
+  <td><a href="/editLang/id/{{this.id}}"><button class="btn btn-primary">Edit</button></a></td></tr>
+  {{/each}}
+</table>
+
+</div>
+
+</div>
