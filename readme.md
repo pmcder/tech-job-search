@@ -1,5 +1,7 @@
- 
+## overview
 
+This is my final project for CS602 Server Side Web Development. The requirments
+included having an API that could handle both JSON and XML requests.
 
 ## confirguring database
 
